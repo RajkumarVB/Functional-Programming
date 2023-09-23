@@ -7,18 +7,10 @@ public class TaskRunner {
         System.out.println("End : " + LocalDateTime.now());
     }
     public static void main(String[] args) {
-        HelloWorldTask task = new HelloWorldTask();
-        runner(task);
+        runner(()-> System.out.println("Hello World"));
     }
 }
 
 interface Task{
     void run();
-}
-
-class HelloWorldTask implements Task{
-    @Override
-    public void run() {
-        System.out.println("Hello World");
-    }
 }
