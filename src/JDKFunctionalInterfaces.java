@@ -2,10 +2,10 @@ import java.util.function.*;
 
 public class JDKFunctionalInterfaces {
     public static void main(String[] args) {
-        Function<Integer,Integer> multiply = x -> x*2;
+        UnaryOperator<Integer> multiply = x -> x*2;
         System.out.println(multiply.apply(12));
 
-        BiFunction<Integer,Integer, Integer> add = (x, y) -> x+y;
+        BinaryOperator<Integer> add = (x, y) -> x+y;
         System.out.println(add.apply(10,20));
 
         Consumer<String> greet = (name) -> System.out.println("Hello " + name + ", how are you doing?");
