@@ -11,7 +11,7 @@ public class JDKFunctionalInterfaces {
         Consumer<String> greet = (name) -> System.out.println("Hello " + name + ", how are you doing?");
         greet.accept("Rajkumar");
 
-        Supplier<Double> getRandomMax100= () -> Math.random() *100;
+        Supplier<Double> getRandomMax100= Math::random;
         System.out.println(getRandomMax100.get());
 
         Predicate<Integer> isOdd = (number) -> (number %2) != 0;
