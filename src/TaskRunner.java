@@ -7,7 +7,12 @@ public class TaskRunner {
         System.out.println("End : " + LocalDateTime.now());
     }
     public static void main(String[] args) {
-        runner(()-> System.out.println("Hello World"));
+        runner(new Task() {
+            @Override
+            public void run() {
+                System.out.println("Hello World");
+            }
+        });
     }
 }
 
