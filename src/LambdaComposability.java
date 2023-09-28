@@ -5,7 +5,6 @@ import java.util.function.UnaryOperator;
 
 public class LambdaComposability{
     public static void main(String[] args) {
-        UnaryOperator<Integer> increment = x -> x+1;
         Consumer<String> logMessage = message -> System.out.println(message + ":"+ LocalDateTime.now());
         Runnable logStart = () -> logMessage.accept("Start");
         Runnable logEnd = () -> logMessage.accept("End");
@@ -14,6 +13,6 @@ public class LambdaComposability{
             System.out.println(operation.apply(5));
             logEnd.run();
         };
-        logger.accept(increment,10);
+        logger.accept(x -> x+1,10);
     }
 }
