@@ -1,11 +1,17 @@
 import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 public class ComposableFunctions {
     public static void main(String[] args) {
-        Function<Integer,Integer> doubleIt = num -> num *2;
-        Function<Integer,Integer> increment = num -> num +1;
+        UnaryOperator<String> removeLeading = String::stripLeading;
+        UnaryOperator<String> removeEnding = String::stripTrailing;
+        UnaryOperator<String> upperCase = String::toUpperCase;
 
-        int result = doubleIt.andThen(increment).apply(2);
-        System.out.println(result);
+        String processedString = removeLeading
+                .andThen(removeEnding)
+                .andThen(upperCase)
+                .apply("   rajkumar     ");
+
+        System.out.println(processedString);
     }
 }
