@@ -5,9 +5,7 @@ public class ComposableFunctions {
         Function<Integer,Integer> doubleIt = num -> num *2;
         Function<Integer,Integer> increment = num -> num +1;
 
-        Function<Integer, Integer> doubleItAndIncrement = doubleIt.andThen(increment);
-        System.out.println(doubleItAndIncrement.apply(2));
-
-
+        int result = doubleIt.andThen(increment).apply(2);
+        System.out.println(result);
     }
 }
