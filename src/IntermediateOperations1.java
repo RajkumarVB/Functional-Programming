@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.stream.Stream;
 
 public class IntermediateOperations1 {
@@ -18,5 +19,44 @@ public class IntermediateOperations1 {
 
         Stream.concat(oddStream,evenStream)
                 .forEach(System.out::println);
+
+        List<Student> students = List.of(
+                new Student(1,"Raj"),
+                new Student(2,"Foo"),
+                new Student(3,"Ma")
+        );
+
+        List<String> studentList = students.stream()
+                .filter(student -> student.getId() < 3)
+                .map(Student::getName)
+                .toList();
+
+        studentList.forEach(System.out::println);
+    }
+}
+
+class Student{
+    private int id;
+    private String name ;
+
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
