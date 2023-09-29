@@ -30,5 +30,10 @@ public class Streams {
         Stream.iterate(0,x->x+2)
                 .limit(10)
                 .forEach(System.out::println);
+
+        List<Integer> upToHundred = Stream.iterate(1, x -> x + 1)
+                .limit(100)
+                .toList();
+        System.out.println(upToHundred);
     }
 }
