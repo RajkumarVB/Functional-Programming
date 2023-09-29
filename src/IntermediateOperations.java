@@ -15,7 +15,10 @@ public class IntermediateOperations {
 
         Stream.of("Apple","Mango","Banana", "Strawberry")
                 .limit(2)
-                .map(String::toUpperCase)
+                .map(str -> {
+                    System.out.println(str);
+                    return 1;
+                })
                 .forEach(System.out::println);
     }
 }
