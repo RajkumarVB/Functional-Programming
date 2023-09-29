@@ -12,5 +12,10 @@ public class IntermediateOperations {
                 .filter(num -> num %2 ==0)
                 .limit(2)
                 .forEach(System.out::println);
+
+        Stream.of("Apple","Mango","Banana", "Strawberry")
+                .limit(2)
+                .map(String::toUpperCase)
+                .forEach(System.out::println);
     }
 }
