@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.stream.Stream;
 
 public class IntermediateOperations1 {
@@ -9,6 +8,9 @@ public class IntermediateOperations1 {
                 .peek(fruit -> System.out.println("Peek : " + fruit))
                 .filter(fruit -> fruit.length() < 6);
 
-
+        Stream.of(1,2,9,8,3,6,4,3,4,5,1,2,2,9)
+                .distinct()
+                .sorted()
+                .forEach(System.out::println);
     }
 }
